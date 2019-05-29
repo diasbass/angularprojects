@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 
 import { Student } from "./student.model";
+import { callLifecycleHooksChildrenFirst } from "@angular/core/src/view/provider";
 
 @Component({
   selector: "jad-student",
@@ -13,4 +14,8 @@ export class StudentComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  clicked() {
+    console.log(`Student: ${this.student.name}`);
+  }
 }
